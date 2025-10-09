@@ -5,7 +5,7 @@ import os
 from .database import Base, engine
 from .routers import auth, programs, applications
 from .seed import seed
-from .routers import auth, programs, applications, upload
+from .routers import auth, programs, applications, upload, users
 
 # Run seed to create tables and demo data if not already present
 seed()
@@ -31,6 +31,7 @@ app.include_router(auth.router)
 app.include_router(programs.router)
 app.include_router(applications.router)
 app.include_router(upload.router)
+app.include_router(users.router)
 
 
 # Health check endpoint

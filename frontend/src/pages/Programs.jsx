@@ -49,7 +49,8 @@ export default function Programs(){
           <div style={{display:'flex',gap:8,alignItems:'center'}}>
             <span className="badge">Authority: {p.authority}</span>
             <span className="badge">Land: {(p.min_land_size ?? 0)} - {(p.max_land_size ?? 'No limit')} acres</span>
-            <Link className="btn" to={`/apply/${p.id}`}>Apply</Link>
+            <Link className="btn" to="/review-details" state={{ program: p }}>Apply</Link>
+
           </div>
         </div>
       ))}

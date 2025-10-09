@@ -12,6 +12,9 @@ import Applications from './pages/Applications'
 import AdminConsole from './pages/AdminConsole'
 import ForgotPassword from "./pages/ForgotPassword"
 import ResetPassword from "./pages/ResetPassword"
+import ReviewDetails from "./pages/ReviewDetails";
+import ApplicationSubmitted from "./pages/ApplicationSubmitted";
+
 
 
 function RequireAuth({ children, admin=false }){
@@ -34,6 +37,11 @@ function App(){
         <Route path="/apply/:programId" element={<RequireAuth><Apply/></RequireAuth>} />
         <Route path="/applications" element={<RequireAuth><Applications/></RequireAuth>} />
         <Route path="/admin" element={<RequireAuth admin={true}><AdminConsole/></RequireAuth>} />
+        <Route path="/review-details" element={<ReviewDetails />} />
+        <Route path="/application-submitted" element={<ApplicationSubmitted />} />
+       <Route path="/" element={<RequireAuth><Dashboard/></RequireAuth>} />
+
+
       </Routes>
     </BrowserRouter>
   )

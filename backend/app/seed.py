@@ -74,10 +74,12 @@ def seed():
     if not db.query(models.User).filter_by(email="admin@kissan.com").first():
         db.add(
             models.User(
-                name="Admin",
-                email="admin@kissan.com",           # ✅ safe email
-                password_hash=bcrypt.hash("Admin@12345"),  # ✅ consistent password
-                role="admin",
+            name="Admin",
+            email="admin@kissan.com",
+            password_hash=bcrypt.hash("Admin@12345"),
+            role="admin",
+            state="Andhra Pradesh",
+            district="HQ"     
             )
         )
     db.commit()
