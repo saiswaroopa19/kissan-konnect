@@ -7,7 +7,7 @@ router = APIRouter(prefix="/upload", tags=["Upload"])
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-@router.post("/")
+@router.post("")
 async def upload_file(file: UploadFile = File(...)):
     try:
         filename = f"{datetime.utcnow().timestamp()}_{file.filename}"
